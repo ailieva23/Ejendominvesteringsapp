@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejendomsprofil</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<header>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/ejendomsprofiler.html">Ejendomsprofiler</a>
+        <a href="/caseOversigt.html">Investeringscases</a>
+        <a href="/simulering.html">Simulering</a>
+        <a href="/sammenligning.html">Sammenligning</a>
+    </nav>
+</header>
+
+<body>
+    <h1>Ejendomsprofil</h1>
+
+    <!-- BBR data vises her -->
+    <div id="ejendomsdata">
+        <p><b>Adresse:</b> <span id="adresse"></span></p>
+        <p><b>Boligtype:</b> <span id="boligtype"></span></p>
+        <p><b>Byggeår:</b> <span id="byggeaar"></span></p>
+        <p><b>Boligareal:</b> <span id="boligareal"></span> m²</p>
+        <p><b>Antal værelser:</b> <span id="antalVaerelser"></span></p>
+    </div>
+
+    <!-- Knap til investeringscase -->
+    <button id="gemProfilBtn">Gem ejendomsprofil</button>
+    <button id="opretCaseBtn">Opret investeringscase</button>
+    <p id="gemBesked" style="display:none; color:green;">✓ Ejendomsprofil gemt!</p>
+
+    <script type="module" src="ejendomsprofil.js"></script>
+</body>
+
+<footer class="footer">
+    © <span id="year"></span> Built by Aleks, Alexander & Zoe (CBS HA(it.) 2. semester)
+</footer>
+
+</html>

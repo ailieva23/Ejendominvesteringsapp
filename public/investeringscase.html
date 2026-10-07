@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <title>Investeringscase</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<header>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/ejendomsprofiler.html">Ejendomsprofiler</a>
+        <a href="/caseOversigt.html">Investeringscases</a>
+        <a href="/simulering.html">Simulering</a>
+        <a href="/sammenligning.html">Sammenligning</a>
+    </nav>
+</header>
+
+<body>
+
+    <!-- Viser hvilken ejendom casen er for -->
+    <h1>Ny investeringscase</h1>
+    <p id="ejendomsAdresse"></p>
+
+    <!-- De 5 sider vises én ad gangen -->
+    <div id="side1" class="caseInput">
+        <h2>Side 1 — Køb og omkostninger</h2>
+        <label>Navn på case: <input type="text" id="caseNavn"></label><br>
+        <label>Beskrivelse: <input type="text" id="caseBeskrivelse"></label><br>
+        <label>Ejendomspris (kr): <input type="number" id="ejendomspris"></label><br>
+        <label>Advokat (kr): <input type="number" id="advokat"></label><br>
+        <label>Tinglysning (kr): <input type="number" id="tinglysning"></label><br>
+        <label>Køberrådgivning (kr): <input type="number" id="koberraadgivning"></label><br>
+        <button id="side1Næste">Næste →</button>
+    </div>
+
+    <div id="side2" style="display:none" class="caseInput">
+        <h2>Side 2 — Finansiering</h2>
+        <label>Lånebeløb (kr): <input type="number" id="laanebeloeb"></label><br>
+        <label>Rente (%): <input type="number" id="rente" step="0.01"></label><br>
+        <label>Løbetid (år): <input type="number" id="loebetid"></label><br>
+        <label>Afdragsfri periode (år): <input type="number" id="afdragsperiode"></label><br>
+        <label>Låntype: <input type="text" id="laantype"></label><br>
+        <button id="side2Tilbage">← Tilbage</button>
+        <button id="side2Næste">Næste →</button>
+    </div>
+
+    <div id="side3" style="display:none" class="caseInput">
+        <h2>Side 3 — Renovering</h2>
+        <label>Udgifter til renovering (kr): <input type="number" id="renoveringUdgifter"></label><br>
+        <label>Tidspunkt for renovering: <input type="date" id="renoveringTidspunkt"></label><br>
+        <button id="side3Tilbage">← Tilbage</button>
+        <button id="side3Næste">Næste →</button>
+    </div>
+
+    <div id="side4" style="display:none" class="caseInput">
+        <h2>Side 4 — Driftsbudget</h2>
+        <label>Vedligeholdelse pr. år (kr): <input type="number" id="vedligeholdelse"></label><br>
+        <label>Forsikring pr. år (kr): <input type="number" id="forsikring"></label><br>
+        <button id="side4Tilbage">← Tilbage</button>
+        <button id="side4Næste">Næste →</button>
+    </div>
+
+    <div id="side5" style="display:none" class="caseInput">
+        <h2>Side 5 — Udlejning</h2>
+        <label>Månedlig leje (kr): <input type="number" id="maanedligLeje"></label><br>
+        <label>Udlejningsudgifter pr. måned (kr): <input type="number" id="udlejningsudgifter"></label><br>
+        <button id="side5Tilbage">← Tilbage</button>
+        <button id="gemCaseBtn">Gem investeringscase</button>
+    </div>
+
+    <script type="module" src="investeringscase.js"></script>
+</body>
+
+</html>

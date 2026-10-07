@@ -1,0 +1,28 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transformIgnorePatterns": []
+  },
+  "dependencies": {
+    "dawa-autocomplete2": "^1.1.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mssql": "^12.5.0",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "jest": "^30.4.1",
+    "jsdom": "^29.1.1"
+  }
+}

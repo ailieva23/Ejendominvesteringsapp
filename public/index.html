@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <title>Ejendomsinvestering-app</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<header>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/ejendomsprofiler.html">Ejendomsprofiler</a>
+        <a href="/caseOversigt.html">Investeringscases</a>
+        <a href="/simulering.html">Simulering</a>
+        <a href="/sammenligning.html">Sammenligning</a>
+    </nav>
+</header>
+<body>
+    <div class="hero">
+        <h1>Din digitale vej til ejendomsinvestering</h1>
+        <p class="hero-tekst">
+            Velkommen til Ejendomsinvestering-app. Denne applikation er designet til at hjælpe dig 
+            med at analysere og simulere ejendomsinvesteringer med præcision.
+        </p>
+    </div>
+
+    <div class="søg-sektion">
+        <div class="autocomplete-container">
+            <input type="text" id="adresse" placeholder="Skriv adresse her...">
+        </div>
+        <button id="gemBtn">Søg</button>
+    </div>
+
+    <script type="module" src="https://unpkg.com/dawa-autocomplete2/dist/js/dawa-autocomplete2.min.js"></script>
+    <script type="module" src="bbr.js"></script>
+    <script type="module" src="dawa.js"></script>
+</body>
+
+<footer class="footer">
+    © <span id="year"></span> Built by Aleks, Alexander & Zoe (CBS HA(it.) 2. semester)
+</footer>
+
+</html>

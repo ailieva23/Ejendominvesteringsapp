@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <title>Simulering</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<header>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/ejendomsprofiler.html">Ejendomsprofiler</a>
+        <a href="/caseOversigt.html">Investeringscases</a>
+        <a href="/simulering.html">Simulering</a>
+        <a href="/sammenligning.html">Sammenligning</a>
+    </nav>
+</header>
+<body>
+    <h1>Simulering</h1>
+
+    <!-- Vælg hvilken case der skal simuleres -->
+    <label>Vælg investeringscase:
+        <select id="caseValg">
+            <option value="">-- Vælg en case --</option>
+        </select>
+    </label>
+    <br>
+    <label>Simuleringsperiode (år):
+        <input type="number" id="periode" value="30" min="1" max="50">
+    </label>
+    <br>
+    <button id="simuleringBtn">Kør simulering</button>
+
+    <!-- Resultater -->
+    <div id="resultater" style="display:none">
+        <h2>Resultater for: <span id="caseNavn"></span></h2>
+        <canvas id="simuleringGraf"></canvas>
+        <div id="tabel"></div>
+    </div>
+
+    <script type="module" src="simulering.js"></script>
+</body>
+
+<footer class="footer">
+    © <span id="year"></span> Built by Aleks, Alexander & Zoe (CBS HA(it.) 2. semester)
+</footer>
+
+</html>

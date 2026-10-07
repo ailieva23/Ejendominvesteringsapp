@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sammenligning</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .graf-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .graf-boks {
+            width: 45%;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/ejendomsprofiler.html">Ejendomsprofiler</a>
+        <a href="/caseOversigt.html">Investeringscases</a>
+        <a href="/simulering.html">Simulering</a>
+        <a href="/sammenligning.html">Sammenligning</a>
+    </nav>
+</header>
+
+<body>
+    <h1>Sammenlign investeringscases</h1>
+
+    <div id="caseValg">
+        <label>Vælg case 1:
+            <select id="case1"></select>
+        </label>
+        <br>
+        <label>Vælg case 2:
+            <select id="case2"></select>
+        </label>
+        <br>
+        <label>Simuleringsperiode (år):
+            <input type="number" id="periode" value="30" min="1" max="50">
+        </label>
+        <br>
+        <button id="sammenlignBtn">Sammenlign</button>
+    </div>
+
+    <div id="resultater" style="display:none">
+        <h2>Sammenligning</h2>
+
+        <!-- Graferne vises to ved siden af hinanden -->
+        <div class="graf-container">
+            <div class="graf-boks">
+                <h3>Egenkapital</h3>
+                <canvas id="egenkapitalGraf"></canvas>
+            </div>
+            <div class="graf-boks">
+                <h3>Cashflow</h3>
+                <canvas id="cashflowGraf"></canvas>
+            </div>
+            <div class="graf-boks">
+                <h3>Gæld</h3>
+                <canvas id="gaeldGraf"></canvas>
+            </div>
+        </div>
+
+        <div id="tabel"></div>
+    </div>
+
+    <script type="module" src="beregninger.js"></script>
+    <script type="module" src="genbrugFunktioner.js"></script>
+    <script type="module" src="sammenligning.js"></script>
+   
+</body>
+
+<footer class="footer">
+    © <span id="year"></span> Built by Aleks, Alexander & Zoe (CBS HA(it.) 2. semester)
+</footer>
+
+</html>

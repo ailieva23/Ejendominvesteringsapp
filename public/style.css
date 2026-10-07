@@ -1,0 +1,282 @@
+/* Her bruger style.css koden fra DAWA guiden (https://dawadocs.dataforsyningen.dk/dok/guide/autocomplete) */
+/* Linje 5-61 */
+/* Denne er mest til hvordan resultaterne fra søgningen vises under inputfeltet */
+
+label {
+  color: red;
+}
+
+.autocomplete-container {
+  /* relative position for at de absolut positionerede forslag får korrekt placering.*/
+  position: relative;
+  width: 100%;
+  max-width: 30em;
+}
+
+.autocomplete-container input {
+  /* Både input og forslag får samme bredde som omkringliggende DIV */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dawa-autocomplete-suggestions {
+  margin: 0.3em 0 0 0;
+  padding: 0;
+  text-align: left;
+  border-radius: 0.3125em;
+  background: #fcfcfc;
+  box-shadow: 0 0.0625em 0.15625em rgba(0, 0, 0, .15);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.dawa-autocomplete-suggestions .dawa-autocomplete-suggestion {
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  padding: 0.4em 0.6em;
+  color: #333;
+  border: 0.0625em solid #ddd;
+  border-bottom-width: 0;
+}
+
+.dawa-autocomplete-suggestions .dawa-autocomplete-suggestion:first-child {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.dawa-autocomplete-suggestions .dawa-autocomplete-suggestion:last-child {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-bottom-width: 0.0625em;
+}
+
+.dawa-autocomplete-suggestions .dawa-autocomplete-suggestion.dawa-selected,
+.dawa-autocomplete-suggestions .dawa-autocomplete-suggestion:hover {
+  background: #f0f0f0;
+}
+
+/* Udviklet med AI-assistance (Claude, Anthropic, 2026).
+Linje 69-300.
+Koden er gennemgået og tilpasset af gruppen.
+Vi har fået en hjælp med en start design af siden og har efterfølgende tilpasset det
+med farver, placering osv. så det ser bedre ud. */
+
+
+/* Bruges til at reset alle margins så siden ser ens for alle browsere*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styler alt i body, så alle sider ser ens ud. Mest font og farve*/
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f5f0e6;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* sikrer at body fylder hele siden, så header og footer kan være hvor de skal */
+}
+
+/* Her er sty´le til headeren*/
+h1 {
+  margin-bottom: 15px;
+}
+
+h2,
+h3 {
+  margin-bottom: 10px;
+}
+
+/* Her er style til footeren, som skal altid i bunden. Vi har også tilpasset farverne */
+footer {
+  margin-top: auto;
+  /* sørger for den bliver i bunden */
+  padding: 15px;
+  text-align: center;
+  background: #6b4f3b;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  font-size: 14px;
+}
+
+/* Design af navigationbare/header  */
+nav {
+  background: #6b4f3b;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Styling af tabellerne, dropdown, knap og grafer */
+.container,
+.controls,
+.case-kort,
+.graf-boks,
+#resultater {
+  background: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Style af selve dropdown menuen og input */
+select,
+input {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Styling af alle knapper i hjemmesiden */
+button {
+  display: inline-block;
+  width: auto;
+  max-width: fit-content;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #6b4f3b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Knappen ændrer farve når musen er over den */
+button:hover {
+  background-color: #8b5e3c;
+}
+
+/* til sammenligning. Gør at 2 grafer vises ved siden af hinanden så det er nemmer at se på*/
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Det er de bokse der vises på ejendomsprofiler og investeringscase siderne. */
+.case-kort {
+  margin-top: 15px;
+}
+
+.case-kort h2 {
+  margin-bottom: 10px;
+}
+
+/* Tilføjer afstand mellem graferne */
+canvas {
+  margin-top: 10px;
+}
+
+/* Styler alle tabeller, som simulering og sammenligning*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: #6b4f3b;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* Laver hver anden kolone lysegrå, så det ser bedre ud */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Giver grøn og rød farver til positiv og negative tal i tabellerne. */
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+/* Laver en underline når man har musen over links fx i headeren*/
+a:hover {
+  text-decoration: underline;
+}
+
+/* Optionelt kan der tilføjes en regel om mindre skærm størrelse fx hvis siden bruges på en mobil eller tablet. */
+/* Men dette er ikke relevant i vores tilfælde, så vi har valgt ikke at inkludere det. */
+
+
+/* Styler forsiden så den bliver centret i midten, det inkluderer søg feltet og knappen */
+.hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero-tekst {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.søg-sektion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 40px 20px;
+}
+
+.søg-sektion input {
+    width: 450px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.søg-sektion button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Begrænser længden af inputfeltet i investeringscase.html */
+.caseInput input,
+.caseInput select {
+  max-width: 200px;
+}
